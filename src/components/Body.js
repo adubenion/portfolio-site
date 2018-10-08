@@ -10,7 +10,7 @@ const Body = (props) => {
 						<article className="media">
 							<figure>
 								<p className="image is-200x200">
-						  			<img src={process.env.PUBLIC_URL + '/img/Portrait.png'}
+						  			<img src="https://raw.githubusercontent.com/adubenion/portfolio-site/master/public/img/Potrait.png"
 						  			alt="Portrait"
 						  			style={{border:'5px solid #393939'}} />
 								</p>

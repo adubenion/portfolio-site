@@ -1,0 +1,15 @@
+html {
+  height: 100%;
+  background-color: #CD9800;
+}
+
+a, a:link {
+	color:white;
+}
+div.navbar-menu {
+	background-color: #B07800;
+}
+a.navbar-item:hover {
+	background-color: #CD9800;
+	color: white;
+}

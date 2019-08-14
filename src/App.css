@@ -13,3 +13,7 @@ a.navbar-item:hover {
 	background-color: #CD9800;
 	color: white;
 }
+
+.body-of-text {
+    max-width:800px;
+}

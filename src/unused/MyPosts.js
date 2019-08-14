@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Posts, PostsButton } from '../components/Posts';
+import { Posts, PostsButton } from './Posts';
 
 
 class MyPosts extends Component {

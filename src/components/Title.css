@@ -1,8 +1,12 @@
 .hero-body {
-    background-color: #B07800
+	background-color: #b07800;
 }
 
 .half-box {
-    border-left: 5px solid #393939;
-    border-bottom: 5px solid #393939;
+	border-left: 5px solid #393939;
+	border-bottom: 5px solid #393939;
+}
+
+Link:active {
+    background-color: #cd9800;
 }

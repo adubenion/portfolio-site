@@ -1,12 +1,12 @@
 .contact-card-container {
-    max-width:500px; 
-    margin:0 auto; 
-    border-top:5px solid #393939; 
-    border-bottom:5px solid #393939; 
-    padding:5px;
+	max-width: 500px;
+	margin: 0 auto;
+	border-top: 5px solid #393939;
+	border-bottom: 5px solid #393939;
+	padding: 5px;
 }
 
 .contact-card-container .card {
-    background-color: #B07800; 
-    border: 5px solid #393939;
+	background-color: #b07800;
+	border: 5px solid #393939;
 }

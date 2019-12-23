@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bulma": "*",
-    "react": "*",
-    "react-dom": "*",
-    "react-router-dom": "*",
-    "react-scripts": "*"
+    "bulma": "^0.8.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.0"
   },
   "scripts": {
     "mail": "nodemon ./src/mailer.js",
@@ -17,6 +17,18 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "nodemon": "*"
+    "nodemon": "^2.0.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -1,19 +1,24 @@
 html {
-  height: 100%;
-  background-color: #CD9800;
+	height: 100%;
+	background-color: #cd9800;
 }
 
-a, a:link {
-	color:white;
-}
-div.navbar-menu {
-	background-color: #B07800;
-}
-a.navbar-item:hover {
-	background-color: #CD9800;
+a,
+a:link {
 	color: white;
 }
-
+div.navbar-menu {
+	background-color: #b07800;
+}
+a.navbar-item:hover,
+a.navbar-item:focus {
+	background-color: #cd9800;
+	color: white;
+}
+a.navbar-item:active {
+	background-color: #4a4a4a;
+	color: #b07800;
+}
 .body-of-text {
-    max-width:800px;
+	max-width: 800px;
 }

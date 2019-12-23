@@ -1,7 +1,7 @@
-.project-container .container {
-    border: 5px solid #393939;
+.project-container .card {
+	border: 5px solid #393939;
 }
 
 .project-container .card {
-    background-color: #B07800;
+	background-color: #b07800;
 }

@@ -1,20 +1,24 @@
-import React, { Component } from 'react';
-import { Posts, PostsButton } from './Posts';
-
+import React, { Component } from "react";
+import { Posts, PostsButton } from "./Posts";
 
 class MyPosts extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			postsVisibility: 'hidden'
-		}
+			postsVisibility: "hidden"
+		};
 	}
 	render() {
-		return(
+		return (
 			<div>
 				<PostsButton visibility={this.handlePostsVisibility.bind(this)} />
-				{this.state.postsVisibility === 'visible' ? (<Posts posts={this.state.content} />) : (false)}}
+				{this.state.postsVisibility === "visible" ? (
+					<Posts posts={this.state.content} />
+				) : (
+					false
+				)}
+				}
 			</div>
-		)
+		);
 	}
 }

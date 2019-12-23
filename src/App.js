@@ -1,76 +1,61 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import 'bulma/css/bulma.css';
-import './App.css';
-import Title from './components/Title';
-import Footer from './components/Footer';
-import HomeView from './views/HomeView';
-import ProjectView from './views/ProjectView';
-import ContactView from './views/ContactView';
+import React, { useState, useEffect } from "react";
+import { Route } from "react-router-dom";
+import "bulma/css/bulma.css";
+import "./App.css";
+import Title from "./components/Title";
+import Footer from "./components/Footer";
+import HomeView from "./views/HomeView";
+import ProjectView from "./views/ProjectView";
+import ContactView from "./views/ContactView";
 
-class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isActive: 'not-active',
-			projectsVisibility: 'hidden',
-			projects: [],
-			posts: []
-		}
-		this.handleProjectsVisibility = this.handleProjectsVisibility.bind(this);
-		this.handleMenu = this.handleMenu.bind(this);
-	}
+const App = () => {
+	const [isActive, setIsActive] = useState("not-active");
+	const [projectsVisibility, setProjectsVisibility] = useState("hidden");
+	const [projects, setProjects] = useState([]);
 
-	componentDidMount() {
-		import('./data/projects.json')
+	useEffect(() => {
+		import("./data/projects.json")
 			.then(res => res.data)
-			.then(data => this.setState({
-				projects: data
-			}, () => {console.log(this.state)}));
-	}
+			.then(data => setProjects(data));
+	}, []);
 
-	handleProjectsVisibility() {
-		let projectToggle = this.state.projectsVisibility;
-		if (projectToggle === 'visible') {
-			this.setState({projectsVisibility:'hidden'});
+	const handleProjectsVisibility = () => {
+		if (projectsVisibility === "visible") {
+			setProjectsVisibility("hidden");
+		} else {
+			setProjectsVisibility("visible");
 		}
-		else {
-			this.setState({projectsVisibility:'visible'});
-		}
-	}	
+	};
 
-	handleMenu() {
+	const handleMenu = () => {
 		let menuToggle = this.state.isActive;
-		if (menuToggle === 'is-active') {
-			menuToggle = 'not-active'
-			this.setState({isActive:menuToggle})
-		} 
-		else {
-			menuToggle = 'is-active'
-			this.setState({isActive:menuToggle})
+		if (isActive === "is-active") {
+			setIsActive(menuToggle);
+		} else {
+			setIsActive(menuToggle);
 		}
-	}
+	};
 
-	render() {
 	return (
 		<div>
-			<Title 
-				menu={this.state.isActive} 
-				handleMenu={this.handleMenu} 
+			<Title menu={isActive} handleMenu={handleMenu} />
+			<Route exact path="/" component={HomeView} />
+			<Route
+				exact
+				path="/projects"
+				render={props => (
+					<ProjectView
+						{...props}
+						projectsVisibility={projectsVisibility}
+						handleProjectsVisibility={handleProjectsVisibility}
+						projects={projects}
+					/>
+				)}
 			/>
-			<Route exact path='/' component={HomeView} />
-			<Route exact path='/projects' render={(props) => 
-				<ProjectView 
-					{...props} 
-					projectsVisibility={this.state.projectsVisibility}
-					handleProjectsVisibility={this.handleProjectsVisibility}
-					projects={this.state.projects} />} 
-				/>
-			<Route exact path='/contact' component={ContactView} />
+			<Route exact path="/contact" component={ContactView} />
 			<Footer />
 		</div>
-		);
-	}
-}
+	);
+};
 
 export default App;

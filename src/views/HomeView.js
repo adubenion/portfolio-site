@@ -1,10 +1,8 @@
-import React from 'react';
-import Body from '../components/Body'
+import React from "react";
+import Body from "../components/Body";
 
 function HomeView() {
-	return (
-		<Body />
-		)
+	return <Body />;
 }
 
-export default HomeView
+export default HomeView;
